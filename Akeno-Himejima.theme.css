@@ -27,7 +27,7 @@
 
 /* Główna tapeta + przyciemnienie (użyj .baseLayer dla main container w 2026) */
 .baseLayer, .app-*, .layers-* {
-  background-image: url ('https://github.com/s0uth09/Akeno-Vencord-Theme/edit/main/akeno.jpg') !important;  /* zmień na raw link do Twojego zdjęcia w repo */
+  background-image: url ('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg') !important;') !important;  /* zmień na raw link do Twojego zdjęcia w repo */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
