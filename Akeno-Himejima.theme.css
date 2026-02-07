@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cinzel+Decorative:wght@700&display=swap');
+
+:root {
+  --background-primary:     #0a0010;      /* głęboka purpurowo-czarna baza */
+  --background-secondary:   #12001a;
+  --background-tertiary:    #1c0030;      /* fiolet hexagons vibe */
+  --background-floating:    rgba(30, 0, 50, 0.75);
+
+  --channeltextarea-background: rgba(10, 0, 16, 0.85);
+
+  --text-primary:           #f0e0ff;      /* jasny fioletowo-biały */
+  --text-secondary:         #d0a0ff;
+  --text-muted:             #a060d0;
+  --text-link:              #ff4500;      /* pomarańczowa wstążka / kanji */
+
+  --interactive-normal:     #c71585;      /* mocny fiolet-magenta */
+  --interactive-hover:      #ff69b4;
+  --interactive-active:     #ff4500;
+  --interactive-muted:      #8a2be2;
+
+  --accent:                 #c41e3a;      /* czerwone oczy / detale */
+  --accent-alt:             #ff304f;
+
+  --brand-experiment:       #c71585;
+  --number-badge:           #ff304f;      /* badge'y jak unread */
+}
+
+/* Główna tapeta + przyciemnienie (użyj .baseLayer dla main container w 2026) */
+.baseLayer, .app-*, .layers-* {
+  background-image: url('https://raw.githubusercontent.com/TWÓJ_USER/TWÓJ_REPO/main/background.png') !important;  /* zmień na raw link do Twojego zdjęcia w repo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Ciemny overlay z gradientem purpurowym */
+.baseLayer::after, .app-*::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(10, 0, 20, 0.75) 0%,
+    rgba(30, 0, 50, 0.70) 50%,
+    rgba(50, 0, 80, 0.65) 100%
+  );
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Przezroczysty chat i scroller */
+.chatContent, .scroller_fea3ef, .chat {
+  background: transparent !important;
+}
+
+/* Elegancki font dla tytułów / nicków (demoniczny vibe) */
+.heading-xxl\/semibold_*, .heading-xxl\/extrabold_*, .defaultMarginh1, .defaultMarginh2, h1, h2, h3 {
+  font-family: 'Cinzel Decorative', 'Playfair Display', serif !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: #ff69b4 !important;
+  text-shadow: 0 0 8px rgba(199, 21, 133, 0.6);
+}
+
+/* Username w kolorze pomarańczowej wstążki */
+.avatarWrapper_*, .username-*, .discriminator-* {
+  color: #ff4500 !important;
+  font-weight: bold;
+}
+
+/* Hovery z fioletowym blaskiem (sidebar, members, itd.) */
+.sidebar:hover, .members_*:hover, .wrapper-*:hover, .container-*:hover {
+  background: rgba(199, 21, 133, 0.15) !important;
+  border-left: 4px solid #c71585 !important;
+  box-shadow: 0 0 12px rgba(199, 21, 133, 0.4);
+  transition: all 0.25s ease;
+}
+
+/* Przyciski / mentions w kolorze czerwonych oczu */
+.lookFilled_*[class*="colorBrand_*"], .lookFilled_*[class*="colorPrimary_*"], .mention {
+  background-color: #c41e3a !important;
+}
+.lookFilled_*[class*="colorBrand_*"]:hover, .lookFilled_*[class*="colorPrimary_*"]:hover {
+  background-color: #ff304f !important;
+}
+
+/* Channel text area */
+.channelTextArea_*, .scrollableContainer {
+  background: rgba(10, 0, 16, 0.8) !important;
+  border: 1px solid #c7158555;
+  border-radius: 12px;
+}
+
+/* Małe ulepszenia: unread, popouts, messages */
+.numberBadge_*, .unread_*, .unreadMentionsIndicatorBottom, .unreadMentionsIndicatorTop {
+  background-color: var(--number-badge) !important;
+}
+
+.messagesPopoutWrap_*, .messageGroupWrapper, .jumpToPresentBar_* {
+  background: var(--background-floating) !important;
+  border: 1px solid #8a2be255;
+}
+
+.autocomplete_*, [role="menu"], .contentWrapper {
+  background: var(--background-secondary) !important;
+}
+
+/* Sidebar i members */
+.sidebar, .privateChannels, .membersWrap_*, .members_* {
+  background: var(--background-tertiary) !important;
+}
