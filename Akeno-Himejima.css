@@ -1,40 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cinzel+Decorative:wght@700&display=swap');
 
 :root {
-  --background-primary:     #0a0010;      /* głęboka purpurowo-czarna baza */
+  --background-primary:     #0a0010;
   --background-secondary:   #12001a;
-  --background-tertiary:    #1c0030;      /* fiolet hexagons vibe */
+  --background-tertiary:    #1c0030;
   --background-floating:    rgba(30, 0, 50, 0.75);
 
   --channeltextarea-background: rgba(10, 0, 16, 0.85);
 
-  --text-primary:           #f0e0ff;      /* jasny fioletowo-biały */
+  --text-primary:           #f0e0ff;
   --text-secondary:         #d0a0ff;
   --text-muted:             #a060d0;
-  --text-link:              #ff4500;      /* pomarańczowa wstążka / kanji */
-
-  --interactive-normal:     #c71585;      /* mocny fiolet-magenta */
+  --text-link:              #ff4500;
+  
+  --interactive-normal:     #c71585;
   --interactive-hover:      #ff69b4;
   --interactive-active:     #ff4500;
   --interactive-muted:      #8a2be2;
 
-  --accent:                 #c41e3a;      /* czerwone oczy / detale */
+  --accent:                 #c41e3a;
   --accent-alt:             #ff304f;
 
   --brand-experiment:       #c71585;
-  --number-badge:           #ff304f;      /* badge'y jak unread */
+  --number-badge:           #ff304f
 }
 
-/* Główna tapeta + przyciemnienie (użyj .baseLayer dla main container w 2026) */
 .baseLayer, .app-*, .layers-* {
-  background-image: url ('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg') !important;') !important;  /* zmień na raw link do Twojego zdjęcia w repo */
+  background-image: url ('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
 
-/* Ciemny overlay z gradientem purpurowym */
 .baseLayer::after, .app-*::after {
   content: "";
   position: fixed;
@@ -49,12 +47,11 @@
   z-index: -1;
 }
 
-/* Przezroczysty chat i scroller */
 .chatContent, .scroller_fea3ef, .chat {
   background: transparent !important;
 }
 
-/* Elegancki font dla tytułów / nicków (demoniczny vibe) */
+
 .heading-xxl\/semibold_*, .heading-xxl\/extrabold_*, .defaultMarginh1, .defaultMarginh2, h1, h2, h3 {
   font-family: 'Cinzel Decorative', 'Playfair Display', serif !important;
   font-weight: 700;
@@ -63,7 +60,6 @@
   text-shadow: 0 0 8px rgba(199, 21, 133, 0.6);
 }
 
-/* Username w kolorze pomarańczowej wstążki */
 .avatarWrapper_*, .username-*, .discriminator-* {
   color: #ff4500 !important;
   font-weight: bold;
