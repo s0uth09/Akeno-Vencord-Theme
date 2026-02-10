@@ -27,7 +27,7 @@
 
 /* Apply background to base layer and app/layers classes (attribute selectors for dynamic suffixes) */
 .baseLayer, [class^="app-"], [class^="layers-"] {
-  background-image: url('Akeno-Vencord-Theme/akeno.jpg') !important;
+  background-image: url('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
