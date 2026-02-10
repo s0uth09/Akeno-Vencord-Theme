@@ -26,7 +26,7 @@
 }
 
 .baseLayer, .app-*, .layers-* {
-  background-image: url ('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg') !important;
+  background-image: url ('Akeno-Vencord-Theme/akeno.jpg') !important;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -41,8 +41,7 @@
     to bottom,
     rgba(10, 0, 20, 0.75) 0%,
     rgba(30, 0, 50, 0.70) 50%,
-    rgba(50, 0, 80, 0.65) 100%
-  );
+    rgba(50, 0, 80, 0.65) 100%,
   pointer-events: none;
   z-index: -1;
 }
@@ -65,7 +64,6 @@
   font-weight: bold;
 }
 
-/* Hovery z fioletowym blaskiem (sidebar, members, itd.) */
 .sidebar:hover, .members_*:hover, .wrapper-*:hover, .container-*:hover {
   background: rgba(199, 21, 133, 0.15) !important;
   border-left: 4px solid #c71585 !important;
@@ -73,36 +71,35 @@
   transition: all 0.25s ease;
 }
 
-/* Przyciski / mentions w kolorze czerwonych oczu */
 .lookFilled_*[class*="colorBrand_*"], .lookFilled_*[class*="colorPrimary_*"], .mention {
   background-color: #c41e3a !important;
 }
+
 .lookFilled_*[class*="colorBrand_*"]:hover, .lookFilled_*[class*="colorPrimary_*"]:hover {
   background-color: #ff304f !important;
 }
 
-/* Channel text area */
 .channelTextArea_*, .scrollableContainer {
-  background: rgba(10, 0, 16, 0.8) !important;
+  background: rgba(10, 0, 16, 0.8);
   border: 1px solid #c7158555;
   border-radius: 12px;
 }
 
-/* Małe ulepszenia: unread, popouts, messages */
 .numberBadge_*, .unread_*, .unreadMentionsIndicatorBottom, .unreadMentionsIndicatorTop {
-  background-color: var(--number-badge) !important;
+  background-color: var(--number-badge);
 }
 
 .messagesPopoutWrap_*, .messageGroupWrapper, .jumpToPresentBar_* {
-  background: var(--background-floating) !important;
+  background: var(--background-floating);
   border: 1px solid #8a2be255;
 }
 
 .autocomplete_*, [role="menu"], .contentWrapper {
-  background: var(--background-secondary) !important;
+  background: var(--background-secondary);
 }
 
-/* Sidebar i members */
 .sidebar, .privateChannels, .membersWrap_*, .members_* {
-  background: var(--background-tertiary) !important;
+  background: var(--background-tertiary);
+}
+
 }
