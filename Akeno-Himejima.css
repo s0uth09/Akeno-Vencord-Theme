@@ -242,3 +242,16 @@
   border-color: transparent;
   border-radius: 4px;
 }
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHANNEL HEADER BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount [class*="header_"],
+#app-mount [class*="headerBar_"],
+#app-mount [class*="toolbar_"],
+#app-mount .container_c19b62,
+#app-mount .header_f75fb0 {
+  background-color: rgba(10, 0, 16, 0.55) !important;
+  backdrop-filter: blur(6px) !important;
+  border-bottom: 1px solid rgba(199, 21, 133, 0.3) !important;
+}
