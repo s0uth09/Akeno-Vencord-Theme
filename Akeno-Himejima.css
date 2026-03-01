@@ -1,113 +1,244 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Cinzel+Decorative:wght@700&display=swap');
 
+/**
+ * @name Akeno Himejima
+ * @author s0uth09
+ * @description High School DxD - Akeno Himejima theme
+ */
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   COLOR VARIABLES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 :root {
-  --background-primary:     #0a0010;
-  --background-secondary:   #12001a;
-  --background-tertiary:    #1c0030;
-  --background-floating:    rgba(30, 0, 50, 0.75);
-
-  --channeltextarea-background: rgba(10, 0, 16, 0.85);
-
-  --text-primary:           #f0e0ff;
-  --text-secondary:         #d0a0ff;
-  --text-muted:             #a060d0;
-  --text-link:              #ff4500;
-  
-  --interactive-normal:     #c71585;
-  --interactive-hover:      #ff69b4;
-  --interactive-active:     #ff4500;
-  --interactive-muted:      #8a2be2;
-
-  --accent:                 #c41e3a;
-  --accent-alt:             #ff304f;
-
-  --brand-experiment:       #c71585;
-  --number-badge:           #ff304f;
+  --bg-image:     url('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg');
+  --p1:           #c71585;        /* hot pink - primary accent */
+  --p2:           rgba(199,21,133,0.5);
+  --p3:           rgba(100,0,60,0.6);
+  --p4:           rgba(100,0,60,0.4);
+  --s1:           rgba(40,0,30,0.3);
+  --s2:           rgba(80,0,50,0.5);
+  --s3:           rgba(10,0,16,0.7);
+  --s4:           rgba(10,0,16,0.4);
+  --text:         #f0e0ff;
 }
 
-/* Apply background to base layer and app/layers classes (attribute selectors for dynamic suffixes) */
-.baseLayer, [class^="app-"], [class^="layers-"] {
-  background-image: url('https://raw.githubusercontent.com/s0uth09/Akeno-Vencord-Theme/main/akeno.jpg') !important;
-  background-size: cover;
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   WALLPAPER
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount {
+  background: var(--bg-image);
   background-position: center;
-  background-repeat: no-repeat;
+  background-size: cover;
   background-attachment: fixed;
 }
 
-/* Overlay gradient */
-.baseLayer::after, [class^="app-"]::after, [class^="layers-"]::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  background: linear-gradient(
-    to bottom,
-    rgba(10, 0, 20, 0.75) 0%,
-    rgba(30, 0, 50, 0.70) 50%,
-    rgba(50, 0, 80, 0.65) 100%
-  );
-  pointer-events: none;
-  z-index: -1;
+#app-mount .bg__960e4,
+#app-mount .app__160d8 {
+  background-color: var(--s4);
 }
 
-.chatContent, .scroller_fea3ef, .chat {
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   CHAT / MESSAGES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .chatContent_f75fb0,
+#app-mount .chat_f75fb0,
+#app-mount .chatContent_f75fb0 .wrapper_d852db,
+#app-mount .chatContent_f75fb0 .wrapper_d852db .wrapper_fc8177,
+#app-mount .channelChatWrapper_cb9592 {
+  background-color: transparent !important;
+}
+
+#app-mount .chat_f75fb0 .header__0b563,
+#app-mount .chat_f75fb0 .content_f75fb0,
+#app-mount .chat_f75fb0 .pageBody__41ed7 {
   background: transparent !important;
 }
 
-/* Headings */
-[class^="heading-xxl/semibold_"], [class^="heading-xxl/extrabold_"], .defaultMarginh1, .defaultMarginh2, h1, h2, h3 {
+/* Message bubbles */
+#app-mount .message__5126c.cozyMessage__5126c .container_b7e1cb,
+#app-mount .message__5126c.cozyMessage__5126c .contents_c19a55 {
+  background-color: var(--s1);
+  padding: 5px 0px 5px 20px;
+}
+
+/* Message input */
+#app-mount .form_f75fb0 .wrapper__44df5,
+#app-mount .form_f75fb0 .scrollableContainer__74017 {
+  background-color: var(--s3);
+}
+#app-mount .form_f75fb0 .channelTextArea_f75fb0 {
+  background-color: transparent;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SIDEBAR (channels/DMs)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .sidebarList__5e434.sidebarListRounded__5e434 .privateChannels_e6b769,
+#app-mount .sidebarList__5e434.sidebarListRounded__5e434 .privateChannels_e6b769 .scroller__99e7c,
+#app-mount .sidebarList__5e434.sidebarListRounded__5e434 .container__2637a {
+  background-color: transparent;
+}
+
+#app-mount .channel__972a0:hover,
+#app-mount .interactive-1vLZ_I.interactiveSelected__972a0 {
+  background-color: var(--s2);
+}
+
+#app-mount .privateChannelsHeaderContainer__99e7c {
+  background-color: var(--p3);
+  padding: 12px;
+  border-radius: 10px;
+}
+
+#app-mount .containerDefault_c69b6d .wrapper__2ea32 {
+  background-color: var(--s1);
+  border-radius: 10px 0 0 10px;
+}
+#app-mount .containerDefault_c69b6d .wrapper__2ea32:hover,
+#app-mount .containerDefault_c69b6d.selected_c69b6d .wrapper__2ea32 {
+  background-color: var(--s2);
+}
+
+#app-mount .panels__5e434 {
+  background-color: var(--s3);
+}
+#app-mount .sidebar__5e434::after {
+  background-color: transparent;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SERVER ICON BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .wrapper_ef3116.guilds__5e434 {
+  background-color: transparent;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MEMBERS LIST
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .container_c8ffbb,
+#app-mount .members_c8ffbb {
+  background-color: transparent;
+}
+
+#app-mount .member__5d473 {
+  background-color: var(--s1);
+  border-radius: 10px;
+}
+#app-mount .member__5d473:hover {
+  background-color: var(--s2);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SETTINGS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .standardSidebarView__23e6b,
+#app-mount .sidebarRegion__23e6b,
+#app-mount .contentRegion__23e6b,
+#app-mount .layer__960e4,
+#app-mount .contentRegionScroller__23e6b,
+#app-mount .sidebarRegionScroller__23e6b {
+  background-color: transparent;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   MODALS / POPOUTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .modal__4f3da,
+#app-mount .browser_d98031,
+#app-mount .menu_c1e9c4,
+#app-mount .messagesPopoutWrap_e8b59c {
+  background-color: var(--s3);
+  border-radius: 10px;
+}
+
+#app-mount .root__49fc1 {
+  background-color: var(--s3);
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(199,21,133,0.3);
+}
+#app-mount .header__49fc1 {
+  background-color: var(--p3);
+  border-radius: 10px 10px 0 0;
+}
+#app-mount .footer__49fc1 {
+  background-color: var(--s2);
+  border-radius: 0 0 10px 10px;
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   AUTOCOMPLETE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .autocomplete__13533 {
+  background-color: var(--s3);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   HEADER BAR
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .title_c38106 {
+  background-color: var(--s3);
+  border-bottom: 3px solid var(--p3);
+}
+
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   TYPOGRAPHY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount h1, #app-mount h2, #app-mount h3,
+#app-mount [class*="heading"],
+#app-mount [class*="title_"] {
   font-family: 'Cinzel Decorative', 'Playfair Display', serif !important;
-  font-weight: 700;
-  letter-spacing: 1px;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
   color: #ff69b4 !important;
-  text-shadow: 0 0 8px rgba(199, 21, 133, 0.6);
+  text-shadow: 0 0 10px rgba(199,21,133,0.6) !important;
 }
 
-/* Avatars and usernames */
-[class^="avatarWrapper_"], [class^="username-"], [class^="discriminator-"] {
+#app-mount [class*="username"],
+#app-mount [class*="userTag"] {
   color: #ff4500 !important;
-  font-weight: bold;
+  font-weight: bold !important;
 }
 
-/* Hover states for sidebar/members/wrappers */
-.sidebar:hover, [class^="members_"]:hover, [class^="wrapper-"]:hover, [class^="container-"]:hover {
-  background: rgba(199, 21, 133, 0.15) !important;
-  border-left: 4px solid #c71585 !important;
-  box-shadow: 0 0 12px rgba(199, 21, 133, 0.4);
-  transition: all 0.25s ease;
+#app-mount a[target="_blank"] {
+  color: var(--p1);
 }
 
-/* Look-filled badges (matches classes that start with lookFilled_ and contain the color classes) */
-[class^="lookFilled_"][class*="colorBrand_"] , [class^="lookFilled_"][class*="colorPrimary_"] , .mention {
-  background-color: #c41e3a !important;
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   ACCENTS — buttons, badges, mentions
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount .numberBadge__2b1f5 {
+  background-color: var(--p1) !important;
 }
 
-[class^="lookFilled_"][class*="colorBrand_"]:hover, [class^="lookFilled_"][class*="colorPrimary_"]:hover {
-  background-color: #ff304f !important;
+#app-mount .mention,
+#app-mount .mentioned__5126c {
+  background-color: var(--p3);
 }
 
-/* Textareas and scrollable containers */
-[class^="channelTextArea_"], .scrollableContainer {
-  background: rgba(10, 0, 16, 0.8);
-  border: 1px solid #c7158555;
-  border-radius: 12px;
+#app-mount .newMessagesBar__0f481 {
+  background-color: var(--p1);
 }
 
-/* Badges and unread indicators */
-[class^="numberBadge_"], [class^="unread_"], .unreadMentionsIndicatorBottom, .unreadMentionsIndicatorTop {
-  background-color: var(--number-badge);
+#app-mount .lookFilled__201d5:not(.colorWhite__201d5, .colorBrandInverted__201d5) {
+  background-color: var(--p1) !important;
+}
+#app-mount .lookFilled__201d5:not(.colorWhite__201d5, .colorBrandInverted__201d5):hover {
+  background-color: var(--p2) !important;
 }
 
-/* Popouts and message groups */
-[class^="messagesPopoutWrap_"], .messageGroupWrapper, [class^="jumpToPresentBar_"] {
-  background: var(--background-floating);
-  border: 1px solid #8a2be255;
+#app-mount .barFill_a562c8,
+#app-mount .container__3f21e.checked__3f21e {
+  background-color: var(--p1) !important;
 }
 
-/* Autocomplete, menus and content wrapper */
-[class^="autocomplete_"], [role="menu"], .contentWrapper {
-  background: var(--background-secondary);
-}
-
-.sidebar, .privateChannels, [class^="membersWrap_"], [class^="members_"] {
-  background: var(--background-tertiary);
+/* ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+   SCROLLBARS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+#app-mount ::-webkit-scrollbar { width: 4px; }
+#app-mount ::-webkit-scrollbar-track { background: transparent; }
+#app-mount ::-webkit-scrollbar-thumb {
+  background-color: var(--p2);
+  border-color: transparent;
+  border-radius: 4px;
 }
