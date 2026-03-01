@@ -177,7 +177,7 @@
    HEADER BAR
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
 #app-mount .title_c38106 {
-  background-color: var(--s3);
+  background-color: transparent;
   border-bottom: 3px solid var(--p3);
 }
 
